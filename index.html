@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Pengurangan</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    #hasil {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>KALKULATOR GEMS ATM</h1>
+    <input type="text" id="bilangan1" placeholder="GEMS AKHIR" onkeydown="checkEnter(event)"><br>
+    <input type="text" id="bilangan2" placeholder="GEMS AWAL" onkeydown="checkEnter(event)"><br>
+    <button onclick="hitung()">Hitung</button>
+    <h2 id="hasil"></h2>
+  </div>
+
+  <script>
+    function checkEnter(event) {
+      if (event.keyCode === 13) {
+        hitung();
+      }
+    }
+
+    function hitung() {
+      var bil1 = parseFloat(document.getElementById("bilangan1").value);
+      var bil2 = parseFloat(document.getElementById("bilangan2").value);
+      var hasil = bil1 - bil2;
+      var hasilBagi = hasil / 8;
+      document.getElementById("hasil").innerHTML = "TOTAL GEMS DARI ATM : " + hasilBagi;
+    }
+  </script>
+</body>
+</html>
 
